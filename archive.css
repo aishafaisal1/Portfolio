@@ -1,0 +1,158 @@
+/* ============================================================
+   Ayesha Faisal — the archive
+   a drawer of pastel folders, everything filed
+   ============================================================ */
+
+.arc-page{padding-bottom:0}
+
+/* ---------- hero ------------------------------------------ */
+.arc-hero{padding:clamp(26px,4vw,54px) var(--pad) clamp(20px,2.6vw,34px)}
+.arc-top{
+  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+  padding-bottom:14px;border-bottom:1px solid var(--rule);
+}
+.arc-title{
+  margin-top:clamp(20px,3vw,38px);
+  font-size:clamp(44px,8.6vw,124px);line-height:.86;letter-spacing:-.055em;font-weight:500;
+}
+.arc-title em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.arc-lede{
+  margin-top:clamp(20px,2.6vw,30px);max-width:56ch;
+  font-size:15px;line-height:1.66;color:color-mix(in srgb,var(--ink) 80%,var(--muted));
+}
+
+/* ---------- filter bar ------------------------------------ */
+.arc-bar{
+  position:sticky;top:72px;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  padding:14px var(--pad);
+  border-block:1px solid var(--rule);
+  background:color-mix(in srgb,var(--paper) 92%,transparent);
+  backdrop-filter:blur(14px);
+}
+.arc-filters{display:flex;flex-wrap:wrap;gap:7px}
+.arc-filters button{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 14px;border:1px solid var(--rule);border-radius:999px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  transition:background-color .25s,color .25s,border-color .25s;
+}
+.arc-filters button:hover{border-color:var(--rule-2);color:var(--ink)}
+.arc-filters button.is-on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.arc-filters button.is-on small{opacity:.65}
+.arc-filters small{font-size:8.5px;opacity:.55}
+.arc-hint{
+  font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.8;
+}
+
+/* ---------- grid ------------------------------------------ */
+.arc-grid{
+  columns:3;column-gap:clamp(14px,2vw,26px);
+  padding:clamp(24px,3.4vw,48px) var(--pad) clamp(40px,5vw,72px);
+}
+.arc-item{
+  display:block;break-inside:avoid;margin-bottom:clamp(16px,2.2vw,28px);
+  transition:opacity .35s ease;
+}
+.arc-item[hidden]{display:none}
+.arc-plate{
+  position:relative;padding:clamp(8px,1vw,12px);border-radius:var(--r);
+  background:var(--rose);
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease),background-color .45s;
+}
+.arc-plate img{width:100%;height:auto;border-radius:2px;display:block}
+.arc-item:hover .arc-plate{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 18px 34px -22px rgba(22,20,14,.5)}
+.arc-tag{
+  position:absolute;left:clamp(12px,1.5vw,18px);top:clamp(12px,1.5vw,18px);
+  padding:4px 8px;border-radius:999px;
+  background:color-mix(in srgb,var(--paper) 90%,transparent);
+  font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.arc-play{
+  position:absolute;right:clamp(12px,1.5vw,18px);bottom:clamp(12px,1.5vw,18px);
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  background:var(--ink);color:var(--paper);font-size:10px;padding-left:2px;
+}
+.arc-cap{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);
+  font-size:13.5px;font-weight:500;letter-spacing:-.01em;
+}
+.arc-cap span{
+  font-family:var(--mono);font-size:8px;font-weight:400;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);text-align:right;flex:0 0 auto;
+}
+.arc-empty{padding:40px 0;font-size:14px;color:var(--muted)}
+
+.arc-slot{
+  margin:0 var(--pad) clamp(40px,5vw,72px);
+  padding:clamp(18px,2.4vw,28px);
+  border:1px dashed var(--rule-2);border-radius:var(--r);
+  background:color-mix(in srgb,var(--page) 70%,transparent);
+  display:flex;align-items:baseline;gap:clamp(14px,3vw,40px);flex-wrap:wrap;
+}
+.arc-slot-label{
+  font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+}
+.arc-slot p{font-size:13.5px;line-height:1.6;color:var(--muted);max-width:62ch}
+
+/* ---------- foot band ------------------------------------- */
+.arc-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding:clamp(30px,4vw,56px) var(--pad);
+  border-top:1px solid var(--rule);background:var(--page);
+}
+.arc-foot-line{font-family:var(--serif);font-size:clamp(20px,2.4vw,30px);letter-spacing:-.01em}
+
+/* ---------- lightbox -------------------------------------- */
+.lb{
+  position:fixed;inset:0;z-index:300;
+  display:grid;place-items:center;
+  padding:clamp(16px,4vw,56px);
+  background:rgba(18,16,12,.9);
+  backdrop-filter:blur(6px);
+}
+.lb[hidden]{display:none}
+.lb-frame{
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  max-width:min(1100px,100%);max-height:100%;
+}
+.lb-img,.lb-video video{
+  max-width:100%;max-height:78vh;width:auto;height:auto;
+  border-radius:3px;box-shadow:0 40px 80px -40px #000;
+}
+.lb-video{display:flex}
+.lb-video[hidden],.lb-img[hidden]{display:none}
+.lb-cap{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#EDE5D8;
+}
+.lb-close{
+  position:fixed;top:18px;right:20px;
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(246,241,231,.35);color:#F6F1E7;font-size:14px;
+  display:grid;place-items:center;
+  transition:background-color .25s,color .25s;
+}
+.lb-close:hover{background:#F6F1E7;color:#16140E}
+body.lb-open{overflow:hidden}
+
+/* ---------- responsive ------------------------------------ */
+@media (max-width:1080px){
+  .arc-grid{columns:2}
+  .arc-hint{display:none}
+}
+@media (max-width:900px){
+  .arc-bar{top:64px}
+  .arc-title{font-size:clamp(40px,10vw,88px)}
+}
+@media (max-width:620px){
+  .arc-grid{columns:1}
+  .arc-bar{position:static;padding:12px var(--pad)}
+  .arc-filters button{padding:7px 11px;font-size:9px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .arc-plate,.arc-item{transition:none}
+  .arc-item:hover .arc-plate{transform:none}
+}
