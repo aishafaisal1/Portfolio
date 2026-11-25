@@ -338,6 +338,7 @@ a:hover .ring{background:var(--ink);border-color:var(--ink);color:var(--paper);t
 .plate-img{overflow:hidden;border-radius:2px;background:transparent}
 .ratio-45{aspect-ratio:4/5}
 .ratio-43{aspect-ratio:4/3}
+.plate-video{display:block;height:100%;width:auto;max-width:100%;margin:0 auto;object-fit:contain;border-radius:2px}
 .plate-img img{width:100%;height:100%;object-fit:contain;transition:transform .8s var(--ease)}
 .hit:hover .plate-img img{transform:scale(1.03)}
 
@@ -347,6 +348,7 @@ a:hover .ring{background:var(--ink);border-color:var(--ink);color:var(--paper);t
   display:grid;place-items:center;
   font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;
 }
+.badge.top{top:clamp(5px,1vw,12px);bottom:auto}
 
 .p-meta{
   display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
@@ -364,6 +366,8 @@ a:hover .ring{background:var(--ink);border-color:var(--ink);color:var(--paper);t
   transition:background-color .3s,color .3s,transform .3s,border-color .3s;
 }
 .hit:hover .arrow{background:var(--ink);border-color:var(--ink);color:var(--paper);transform:rotate(45deg)}
+.hit:hover .arrow.play{transform:none}
+.arrow.play{font-size:9px}
 
 /* ---------- statement ------------------------------------- */
 .statement{
